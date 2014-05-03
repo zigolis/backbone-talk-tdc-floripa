@@ -16,17 +16,17 @@
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
+			// if( window.location.search.match( /print-pdf/gi ) ) {
+			// 	var link = document.createElement( 'link' );
+			// 	link.rel = 'stylesheet';
+			// 	link.type = 'text/css';
+			// 	link.href = 'css/print/pdf.css';
+			// 	document.getElementsByTagName( 'head' )[0].appendChild( link );
+			// }
 		</script>
 
 		<!--[if lt IE 9]>
@@ -38,79 +38,227 @@
         /*
             Backbone Presentation
         */
-        .title {
-            font-size: 80px !important;
+        .text {
+            line-height: 70px !important;
         }
 
-        .sub-title {
-            font-size: 60px !important
+        .text-12 {
+            font-size: 120px !important
         }
 
-        .reveal .twitter a {
-            display: block;
-            font-size: 60px !important;
-            margin-top: 50px;
+        .text-8 {
+            font-size: 80px !important
         }
 
-        .orange {
+        .text-5 {
+            font-size: 50px !important
+        }
+
+        .text-4 {
+            font-size: 40px !important;
+        }
+
+        .text-3 {
+            font-size: 30px !important;
+        }
+
+        .text-2 {
+            font-size: 25px !important;
+        }
+
+        .mtop-3 {
+            margin-top: 300px !important;
+        }
+
+        /*.orange {
             color: #ff7800 !important;
-        }
+        }*/
 
         .pull-right {
             text-align: right;
+        }
+
+        img {
+            border: none !important;
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .f-l {
+            float: left;
+        }
+
+        .f-r {
+            float: right;
+        }
+
+        .exclamation {
+            color: #ff7800;
+            display: block;
+            font-size: 200px !important;
+            margin-top: 40px !important
+        }
+
+        * {
+            font-weight: 100 !important;
+            font-family: 'Lucida Grande' !important;
+        }
+
+        .joel {
+            position: absolute !important;
+            top: -50px !important;
+            margin: 0 !important;
+            max-width: none !important;
+            max-height: none !important;
+        }
+
+        @font-face {
+            font-family: 'chunkfive';
+            src: url("lib/font/chunkfive.otf");
+            /*src: url("../../lib/font/chunkfive.eot?#iefix") format("embedded-opentype"), url("../../lib/font/chunkfive.woff") format("woff"), url("../../lib/font/chunkfive.ttf") format("truetype"), url("../../lib/font/chunkfive.svg#LeagueGothicRegular") format("svg");*/
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .spotlight {
+            font-family: chunkfive !important;
+        }
+
+        .t-fff {
+            color: #999;
+            letter-spacing: 0;
+            text-shadow: -1px 1px 1px #777;
         }
     </style>
 
 	<body>
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<p class="title">SOFEA</p>
-					<p class="sub-title">Arquiteturas REST com <br>Backbone e HTML5</p>
-					<p class="twitter"><a href="http://twitter.com/zigolis" class="orange">@zigolis</a></p>
+				<section data-background="img/tdc.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="fade">
+                    <p class="text-4 mtop-3">Trilha - JavaScript</p>
+                    <p class="text-3">SOFEA - Arquiteturas REST com Backbone e HTML5</p><br>
+					<p class="text text-3"><a href="http://twitter.com/zigolis" class="orange">Gabriel Zigolis / @zigolis</a></p>
 				</section>
 
-                <section data-background="img/zigolis.jpg" data-background-repeat="no-repeat"></section>
-                <section data-background="img/companies.png" data-background-repeat="no-repeat" data-background-size="200px">
-                    <!-- <h3 class="question">Quem é?</h3>
+                <section data-background="img/mosaic_logo_full.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <img src="img/livro_sofia.png" width="30%" class="f-l"><br><br>
+
+                    <p class="text-8 spotlight">
+                        WTF is <br>SOFEA <br> <strong class="exclamation">?</strong>
+                    </p>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">S O F E A</p>
+                    <p class="text text-5">Service Oriented Front End Architecture</p>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="zoom">
+                    <p class="text-12 spotlight">SOFEA</p>
+
+                    <p class="text text-5">
+                        &ldquo;Proposes to remove all presentation layer logic from the server
+                        to JavaScript logic on the client.&rdquo;
+                    </p><br>
+
+                    <p class="text text-2 pull-right">
+                        <a href="https://sites.google.com/a/thinserverarchitecture.com/home/Definitions">
+                            <em>thinserverarchitecture.com</em>
+                        </a>
+                    </p>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <img src="img/dvd_sofia.png" class="f-l">
+
+                    <ul class="f-l" style="margin:100px 0 0 100px;">
+                        <li class="text-4">O que nós ganhamos com isso?</li><br>
+                        <li class="text-2 fragment">Divisão de responsabilidades no desenvolvimento</li>
+                        <li class="text-2 fragment">Baixo acoplamento das camadas</li>
+                        <li class="text-2 fragment">Comunicação client/server através de verbos HTTP</li>
+                        <li class="text-2 fragment">O client requisita o que e quando</li>
+                    </ul>
+                </section>
+
+                <section data-background="img/tdc_top_white.png" data-background-repeat="repeat" data-background-size="100%" data-transition="zoom">
+                    <p class="text-12 spotlight t-fff">REST</p>
+
+                    <p class="text text-5 fragment t-fff">in peace</p>
+                    <img src="img/rip_ie.jpg" alt="" class="fragment">
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">R E S T</p>
+
+                    <p class="text text-4">
+                        &ldquo;Software architectural consisting of a coordinated set of architectural constraints
+                        applied within a distributed hypermedia system.&rdquo;
+                    </p><br>
+
+                    <p class="pull-right">
+                        <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">
+                            <em>Roy Thomas Fielding</em>
+                        </a>
+                    </p>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">Características</p><br>
 
                     <ul>
-                        <li>Front-End Engineer na Meritt Informação Educacional</li>
-                        <li>Front-End Developer a 9 anos</li>
-                        <li>Instrutor de desenvolvimento web há 7 anos</li>
-                        <li>globo.com, grupo RBS, IBM, GoodCard, SelulloidAg...</li>
-                        <li><a href="http://www.zigolis.com">http://zigolis.com</a></li>
-                    </ul> -->
+                        <li class="text-3">Stateless</li>
+                        <li class="text-3">Client-server</li>
+                        <li class="text-3">Cacheable</li>
+                        <li class="text-3">HTTP verbs GET, POST, PUT and DELETE</li>
+                    </ul>
                 </section>
 
-                <section>
-                    <p class="title">mas afinal de contas <br> o que é SOFEA?</p>
+                <section data-background="img/tdc_top_white.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="concave">
+                    <img src="img/backbone.png" alt="image backbone">
                 </section>
 
-                <section>
-                    <p class="title">padrões de desenvolvimento front-end para sistemas orientados a serviço.</p>
-                </section>
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="concave">
+                    <p class="text-12 spotlight">Backbone</p>
 
-                <section>
-                    <p class="title">image about SOFEA</p>
-                </section>
+                    <p class="text text-4">
+                        &ldquo;Gives structure to web applications by providing models, collections and views to
+                        consume API over a RESTful JSON interface.&rdquo;
+                    </p><br>
 
-                <section>
-                    <p class="title">e o backbone?</p>
-                    <img src="img/image-backbone.png" alt="image backbone">
-                </section>
-
-                <section>
-                    <p class="sub-title">
-                        “You can’t make an architect. <br>
-                        But you can open the doors and windows toward the light
-                        as you see it.”
+                    <p class="pull-right">
+                        <a href="http://backbonejs.org/">
+                            <em>backbonejs.org</em>
+                        </a>
                     </p>
-                    <p class="pull-right"><em>Frank Lloyd Wright.</em></p>
                 </section>
 
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">Características</p><br>
+
+                    <ul class="text text-4">
+                        <li>Poderosa LIB JavaScript</li>
+                        <li>Adaptável, baseada no padrão MV*</li>
+                        <li>Moderninha, largamente usada em SPA</li>
+                        <li>Magrinha, apenas 6.5Kb</li>
+                    </ul>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="zoom">
+                    <img src="img/html_logo.png" alt="HTML5 logo">
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="concave">
+                    <br>
+                    <p class="text-8" style="position:absolute;top:200px;">Tu tá de <br> brincation <br> uiti me?</p>
+                    <img src="img/joel_facts.png" alt="Joel facts"  height="800px" class="joel">
+                </section>
+
+                <section data-transition="linear">
+                    <img src="img/joel_facts.png" alt="Joel facts" class="f-l">
+                    <p class="text-8">Agora vamos <br> falar de <br> coleções</p>
+                </section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
