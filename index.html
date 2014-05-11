@@ -139,8 +139,8 @@
         }
 
         .code, .pre {
-            width: 500px;
-            margin-left: -3px !important;
+            width: 650px;
+            margin-left: -50px !important;
         }
     </style>
 
@@ -188,18 +188,18 @@
 
                     <ul class="f-l" style="margin:100px 0 0 100px;">
                         <li class="text-4">O que nós ganhamos com isso?</li><br>
-                        <li class="text-2 fragment">Divisão de responsabilidades no desenvolvimento</li>
-                        <li class="text-2 fragment">Baixo acoplamento das camadas</li>
-                        <li class="text-2 fragment">Comunicação client/server através de verbos HTTP</li>
-                        <li class="text-2 fragment">O client requisita o que e quando</li>
+                        <li class="text-2">Divisão de responsabilidades no desenvolvimento</li>
+                        <li class="text-2">Baixo acoplamento das camadas</li>
+                        <li class="text-2">Comunicação client/server através de verbos HTTP</li>
+                        <li class="text-2">O client requisita o que e quando</li>
                     </ul>
                 </section>
 
                 <section data-background="img/tdc_top_white.png" data-background-repeat="repeat" data-background-size="100%" data-transition="zoom">
                     <p class="text-12 spotlight t-fff">REST</p>
 
-                    <p class="text text-5 fragment t-fff">in peace</p>
-                    <img src="img/rip_ie.jpg" alt="" class="fragment">
+                    <p class="text text-5 t-fff">in peace</p>
+                    <img src="img/rip_ie.jpg" alt="" class="">
                 </section>
 
                 <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
@@ -311,6 +311,11 @@
                     <p class="text-12 spotlight">WebSocket?</p>
                 </section>
 
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">Não</p>
+                    <img src="img/dont_do_more.gif" width="500">
+                </section>
+
                 <section data-background="img/tdc_top_white.png" data-background-repeat="no-repeat" data-background-size="100%">
                     <p class="text-12 spotlight t-fff">Collection</p>
                     <img src="img/tazo.jpg">
@@ -324,11 +329,17 @@
                     <img src="img/qedu.gif" class="img" width="1000px">
                 </section>
 
-                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
-                    <p class="text-12 spotlight">Hands on</p>
+                <section data-background="img/tdc_top_white.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <p class="text-12 spotlight t-fff">Hands on</p>
+                    <img src="img/hands_on.jpg">
                 </section>
 
                 <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-12 spotlight">List View</p>
+                    <img src="img/list_view.png">
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="zoom">
                     <p class="text-8 spotlight">Collection</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
@@ -356,7 +367,7 @@ return  FollowModel;
                 </section>
 
                 <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
-                    <p class="text-8 spotlight">View</p>
+                    <p class="text-8 spotlight">...View</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 var FollowView = Backbone.View.extend({
@@ -374,22 +385,34 @@ return  FollowView;
 
                 <!-- LIST VIEW -->
                 <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
-                    <p class="text-8 spotlight">View</p>
+                    <p class="text-8 spotlight">ListView</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
-var FollowView = Backbone.View.extend({
-        el: '.qedu-user-following',
+var FollowListView = Backbone.View.extend({
+    template: _.template( $('#tmp-follow').html() ),
 
-        initialize: function() {
-            this.collection = new FollowCollection();
-            this.collection.fetch();
-        }
+    initialize: function() {
+        this.listenTo(this.collection, 'sync remove add', this.render);
+    },
 });
 
-return  FollowView;
+return  FollowListView;
                     </code></pre>
                 </section>
 
+                <!-- LIST VIEW - RENDER -->
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <p class="text-8 spotlight">ListView Render</p>
+
+                    <pre class="pre"><code data-trim contenteditable class="code">
+render: function() {
+    this.$el.html(this.template({
+        'collection': this.collection,
+        'view': this
+    }));
+}
+                    </code></pre>
+                </section>
 
 
                 <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="zoom">
