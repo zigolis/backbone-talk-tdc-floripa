@@ -132,6 +132,16 @@
             letter-spacing: 0;
             text-shadow: -1px 1px 1px #777;
         }
+
+        .code {
+            line-height: 1.4 !important;
+            zoom: 1.9;
+        }
+
+        .code, .pre {
+            width: 500px;
+            margin-left: -3px !important;
+        }
     </style>
 
 	<body>
@@ -314,9 +324,71 @@
                     <img src="img/qedu.gif" class="img" width="1000px">
                 </section>
 
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <p class="text-12 spotlight">Hands on</p>
+                </section>
 
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="linear">
+                    <p class="text-8 spotlight">Collection</p>
 
+                    <pre class="pre"><code data-trim contenteditable class="code">
+var FollowCollection = Backbone.Collection.extend({
+        url:   '/api/acompanhamentos/',
+        model: FollowModel
+});
 
+return  FollowCollection;
+                    </code></pre>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%" data-transition="zoom">
+                    <p class="text-8 spotlight">Model</p>
+
+                    <pre class="pre"><code data-trim contenteditable class="code">
+var FollowModel = Backbone.Model.extend({
+        urlRoot: function() {
+            return '/api/acompanhamento/'
+        }
+});
+
+return  FollowModel;
+                    </code></pre>
+                </section>
+
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <p class="text-8 spotlight">View</p>
+
+                    <pre class="pre"><code data-trim contenteditable class="code">
+var FollowView = Backbone.View.extend({
+        el: '.qedu-user-following',
+
+        initialize: function() {
+            this.collection = new FollowCollection();
+            this.collection.fetch();
+        }
+});
+
+return  FollowView;
+                    </code></pre>
+                </section>
+
+                <!-- LIST VIEW -->
+                <section data-background="img/tdc_top_black.png" data-background-repeat="no-repeat" data-background-size="100%">
+                    <p class="text-8 spotlight">View</p>
+
+                    <pre class="pre"><code data-trim contenteditable class="code">
+var FollowView = Backbone.View.extend({
+        el: '.qedu-user-following',
+
+        initialize: function() {
+            this.collection = new FollowCollection();
+            this.collection.fetch();
+        }
+});
+
+return  FollowView;
+                    </code></pre>
+                </section>
 
 
 
