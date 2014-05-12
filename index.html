@@ -506,8 +506,8 @@ toFollow: function() {
 .done(function(data) {
     model = new FollowModel(data);
 
-    $(".follow-menu").triggerHandler( "u:follow", [model] );
-    $(".follow-count").triggerHandler( "u:followCount" );
+    Backbone.trigger( "u:follow", model );
+    Backbone.trigger( "u:followCount" );
 
     this.following();
 });
@@ -526,8 +526,8 @@ toFollow: function() {
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 var FollowView = Backbone.View.extend({
-    events: {
-        'u:follow' : 'addToCollection'
+    initialize: function(){
+        Backbone.on('u:follow', this.addToCollection, this);
     },
     addToCollection: function(model) {
         this.collection.add(model);
