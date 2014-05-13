@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
         <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/print/print.css" media="print">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -106,7 +107,6 @@
         @font-face {
             font-family: 'chunkfive';
             src: url("lib/font/chunkfive.otf");
-            /*src: url("../../lib/font/chunkfive.eot?#iefix") format("embedded-opentype"), url("../../lib/font/chunkfive.woff") format("woff"), url("../../lib/font/chunkfive.ttf") format("truetype"), url("../../lib/font/chunkfive.svg#LeagueGothicRegular") format("svg");*/
             font-weight: normal;
             font-style: normal;
         }
@@ -135,9 +135,19 @@
             width: 650px;
             margin-left: -50px !important;
         }
+        #tdc {
+            background: url(img/tdc.png) repeat-x;
+            height: 17px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2
+        }
     </style>
 
 	<body>
+        <div id="tdc"></div>
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="#000">
@@ -146,10 +156,12 @@
 					<p class="text text-3"><a href="http://twitter.com/zigolis" class="orange">Gabriel Zigolis / @zigolis</a></p>
 				</section>
 
-                <section data-background="img/mosaic_logo_full.png"></section>
+                <section data-background="#fff">
+                     <img src="img/mosaic_logo_full.png" width="145%" class="img print" style="position:absolute;left:-216px;top:-23px">
+                </section>
 
                 <section data-background="#000">
-                    <img src="img/livro_sofia.png" width="30%" class="f-l"><br><br>
+                    <img src="img/livro_sofia.png" width="30%" class="f-l" style="margin-left:142px"><br><br>
 
                     <p class="text-8 spotlight">
                         WTF is <br>SOFEA <br> <strong class="exclamation">?</strong>
@@ -199,8 +211,8 @@
                     <p class="text-12 spotlight">R E S T</p>
 
                     <p class="text text-4">
-                        &ldquo;Software architectural consisting of a coordinated set of architectural constraints
-                        applied within a distributed hypermedia system.&rdquo;
+                        &ldquo;Software architectural style consisting of a coordinated set of architectural constraints
+                        applied components, conectors and data elements, within a distributed hypermedia system.&rdquo;
                     </p><br>
 
                     <p class="text text-2 pull-right">
@@ -214,14 +226,14 @@
                     <p class="text-12 spotlight">Características</p><br>
 
                     <ul class="text text-4">
+                        <li>Client-Server</li>
                         <li>Stateless</li>
-                        <li>Client-server</li>
-                        <li>Cacheable</li>
-                        <li>HTTP verbs GET, POST, PUT and DELETE</li>
+                        <li>Cache</li>
+                        <li>HTTP verbs: GET, POST, PUT, DELETE...</li>
                     </ul>
                 </section>
 
-                <section data-background="img/tdc_top_white.png" data-transition="zoom">
+                <section data-background="#fff" data-transition="zoom">
                     <img src="img/backbone.png" alt="image backbone">
                 </section>
 
@@ -259,7 +271,7 @@
                     <p class="text-12 spotlight">HTML5 é a n...</p>
                     <img src="img/joel_facts.png" alt="Joel facts"  height="800px" class="img joel fragment">
 
-                    <p class="text-8 spotlight fragment" style="position:absolute;top:200px;">Tu tá de <br> brincation <br> uiti me?</p>
+                    <p class="text-8 spotlight fragment" style="position:absolute;left:-50px;top:200px;">Tá de <br> brinqueichon <br> uite me,<br>cara?</p>
                 </section>
 
                 <section data-background="#000">
@@ -277,12 +289,12 @@
                     <img src="img/dinosaur.png" width="50%">
                 </section>
 
-                <section data-background="img/tdc_top_white.png">
+                <section data-background="#fff">
                     <p class="text-12 spotlight t-fff">Collection</p>
                     <img src="img/collection.jpg">
                 </section>
 
-                <section data-background="img/tdc_top_white.png" data-transition="zoom">
+                <section data-background="#fff" data-transition="zoom">
                     <img src="img/grooveshark.png">
                 </section>
 
@@ -309,12 +321,12 @@
                     <img src="img/dont_do_more.gif" width="500">
                 </section>
 
-                <section data-background="img/tdc_top_white.png">
+                <section data-background="#fff">
                     <p class="text-12 spotlight t-fff">Collection</p>
                     <img src="img/tazo.jpg">
                 </section>
 
-                <section data-background="img/tdc_top_white.png" data-transition="zoom">
+                <section data-background="#fff" data-transition="zoom">
                     <img src="img/qedu.png">
                 </section>
 
@@ -322,9 +334,13 @@
                     <img src="img/qedu.gif" class="img" width="1000px">
                 </section>
 
-                <section data-background="img/tdc_top_white.png" data-transition="zoom">
+                <section data-background="#fff" data-transition="zoom">
                     <p class="text-12 spotlight t-fff">Hands on</p>
                     <img src="img/hands_on.jpg">
+                </section>
+
+                <section data-background="#fff">
+                    <img src="img/architectural.png" class="img" width="80%" style="position:absolute;top:-26px;left:136px">
                 </section>
 
                 <section data-background="#000">
@@ -337,7 +353,7 @@
                 </section>
 
                 <section data-background="#000">
-                    <p class="text-12 spotlight">List View</p>
+                    <p class="text-12 spotlight">ListView</p>
                     <img src="img/list_view.png">
                 </section>
 
@@ -346,8 +362,8 @@
 
                     <pre class="pre code-mid"><code data-trim contenteditable class="code code-mid">
 var FollowCollection = Backbone.Collection.extend({
-        url:   '/api/acompanhamentos/',
-        model: FollowModel
+    url:   '/api/following/',
+    model: FollowModel
 });
 return  FollowCollection;
                     </code></pre>
@@ -358,9 +374,9 @@ return  FollowCollection;
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 var FollowModel = Backbone.Model.extend({
-        urlRoot: function() {
-            return '/api/acompanhamento/'
-        }
+    urlRoot: function() {
+        return '/api/follow/'
+    }
 });
 return  FollowModel;
                     </code></pre>
@@ -372,11 +388,11 @@ return  FollowModel;
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 var FollowView = Backbone.View.extend({
-        initialize: function() {
-            this.collection = new FollowCollection();
-            this.collection.fetch();
-        }
-        ...
+    initialize: function() {
+        this.collection = new FollowCollection();
+        this.collection.fetch();
+    }
+    ...
 });
 return  FollowView;
                     </code></pre>
@@ -384,14 +400,14 @@ return  FollowView;
 
                 <!-- FOLLOWVIEW -->
                 <section data-background="#000">
-                    <p class="text-8 spotlight">FollowView @FollowList</p>
+                    <p class="text-8 spotlight">FollowView @followList</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 initialize: function() {
     ...
     this.followList = new FollowListView({
         'collection': this.collection,
-        'el':             this.$('.list-view')
+        'el': this.$('.list-view')
     });
 }
                     </code></pre>
@@ -399,14 +415,14 @@ initialize: function() {
 
                 <!-- LIST VIEW -->
                 <section data-background="#000">
-                    <p class="text-8 spotlight">ListView</p>
+                    <p class="text-8 spotlight">FollowListView</p>
 
                     <pre class="pre code-big"><code data-trim contenteditable class="code code-big">
 var FollowListView = Backbone.View.extend({
     template: _.template( $('#tmp-list-view').html() ),
 
     initialize: function() {
-        this.listenTo(this.collection, 'sync remove add', this.render);
+        this.listenTo( this.collection, 'sync remove add', this.render );
     },
     ...
 });
@@ -416,7 +432,7 @@ return  FollowListView;
 
                 <!-- LIST VIEW - RENDER -->
                 <section data-background="#000">
-                    <p class="text-8 spotlight">ListView @Render</p>
+                    <p class="text-8 spotlight">FollowListView @render</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 ...
@@ -430,7 +446,7 @@ render: function() {
                 </section>
 
                 <section data-background="#000">
-                    <p class="text-12 spotlight">Follow Button</p>
+                    <p class="text-12 spotlight">FollowButton</p>
                     <img src="img/button_view.png">
                 </section>
 
@@ -459,7 +475,7 @@ return  ButtonModel;
 var ButtonView = Backbone.View.extend({
     el: '.follow-section',
     events: {
-        'click .to-follow' : 'toFollow'
+        'click .follow' : 'follow'
     },
     ...
 });
@@ -475,19 +491,19 @@ return  ButtonView;
 ...
 initialize: function() {
     this.model = new ButtonModel();
-    this.listenTo(this.model, "change", toFollow);
+    this.listenTo( this.model, "change", follow );
 },
 ...
                     </code></pre>
                 </section>
 
-                <!-- BUTTON VIEW @TOFOLLOW -->
+                <!-- BUTTON VIEW @FOLLOW -->
                 <section data-background="#000">
-                    <p class="text-8 spotlight">ButtonView @toFollow</p>
+                    <p class="text-8 spotlight">ButtonView @follow</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 ...
-toFollow: function() {
+follow: function() {
     this.model.set({ follow: true });
     this.model.save()
 
@@ -497,11 +513,11 @@ toFollow: function() {
                     </code></pre>
                 </section>
 
-                <!-- BUTTON VIEW @TOFOLLOW@DONE -->
+                <!-- BUTTON VIEW @FOLLOW@DONE -->
                 <section data-background="#000">
-                    <p class="text-8 spotlight">ButtonView @toFollow</p>
+                    <p class="text-8 spotlight">ButtonView @follow</p>
 
-                    <pre class="pre code-mid"><code data-trim contenteditable class="code code-mid">
+                    <pre class="pre"><code data-trim contenteditable class="code">
 ...
 .done(function(data) {
     model = new FollowModel(data);
@@ -524,16 +540,16 @@ toFollow: function() {
                 <section data-background="#000">
                     <p class="text-8 spotlight">FollowView</p>
 
-                    <pre class="pre"><code data-trim contenteditable class="code">
+                    <pre class="pre code-mid"><code data-trim contenteditable class="code code-mid">
 var FollowView = Backbone.View.extend({
     initialize: function(){
-        Backbone.on('u:follow', this.addToCollection, this);
+        Backbone.on( 'u:follow', this.addToCollection, this );
     },
     addToCollection: function(model) {
         this.collection.add(model);
     }
 });
-return  FollowView;
+return FollowView;
                     </code></pre>
                 </section>
 
@@ -544,12 +560,15 @@ return  FollowView;
 
                 <section data-background="#000" data-transition="zoom">
                     <p class="text-8 spotlight">That's all, folks.</p>
-                    <img src="img/crockford.jpg" class="img">
-                    <p class="text-3 spotlight">e não esqueçam do ;</p>
+                    <img src="img/crockford.jpg" class="img" width="330">
+
+                    <p class="text text-2 pull-right">
+                        <em>e não esqueçam do <span class="text-5">;</span></em>
+                    </p>
                 </section>
 
                 <section data-background="#000">
-                    <p class="text-8 spotlight"><a href="http://www.linkedin.com/pub/gabriel-gottgtroy-zigolis/15/706/658">Gabriel Zigolis</a></p>
+                    <p class="text-8"><a href="http://www.linkedin.com/pub/gabriel-gottgtroy-zigolis/15/706/658" class="spotlight">Gabriel Zigolis</a></p>
                     <p class="text-5 spotlight">gabriel.zigolis@gmail.com</p>
                     <br>
                     <p class="text-3 spotlight"><a href="http://www.zigolis.com.br/blog/">zigolis.com</a></p>
@@ -557,9 +576,6 @@ return  FollowView;
                     <p class="text-3 spotlight"><a href="https://speakerdeck.com/zigolis">speakerdeck.com/zigolis</a></p>
                     <p class="text-3 spotlight"><a href="http://www.slideshare.net/zigolis">slideshare.com/zigolis</a></p>
                 </section>
-
-
-
 			</div>
 		</div>
 
