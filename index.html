@@ -299,8 +299,20 @@
                 </section>
 
                 <section data-background="#000">
-                    <img src="img/grooveshark.gif" class="img" width="1000px">
+                    <img src="img/grooveshark/1.png" class="img groove" rel="1" width="1000px">
                 </section>
+
+                <script>
+                    document.getElementsByClassName("groove")[0].onclick = function(){
+                        rel = parseInt(this.getAttribute("rel"));
+
+                        if (rel == 5) { rel = 0 }
+
+                        rel ++;
+                        this.src = "img/grooveshark/" + rel + ".png";
+                        this.setAttribute("rel", rel);
+                    }
+                </script>
 
                 <section data-background="#000">
                     <p class="text-12 spotlight">Wooow...</p>
@@ -331,8 +343,20 @@
                 </section>
 
                 <section data-background="#000">
-                    <img src="img/qedu.gif" class="img" width="1000px">
+                    <img src="img/qedu/1.png" class="img next" rel="1" width="1000px">
                 </section>
+
+                <script>
+                    document.getElementsByClassName("next")[0].onclick = function(){
+                        rel = parseInt(this.getAttribute("rel"));
+
+                        if (rel == 8) { rel = 0 }
+
+                        rel ++;
+                        this.src = "img/qedu/" + rel + ".png";
+                        this.setAttribute("rel", rel);
+                    }
+                </script>
 
                 <section data-background="#fff" data-transition="zoom">
                     <p class="text-12 spotlight t-fff">Hands on</p>
@@ -358,7 +382,7 @@
                 </section>
 
                 <section data-background="#000">
-                    <p class="text-8 spotlight">Collection</p>
+                    <p class="text-8 spotlight">FollowCollection</p>
 
                     <pre class="pre code-mid"><code data-trim contenteditable class="code code-mid">
 var FollowCollection = Backbone.Collection.extend({
@@ -370,7 +394,7 @@ return  FollowCollection;
                 </section>
 
                 <section data-background="#000">
-                    <p class="text-8 spotlight">Model</p>
+                    <p class="text-8 spotlight">FollowModel</p>
 
                     <pre class="pre"><code data-trim contenteditable class="code">
 var FollowModel = Backbone.Model.extend({
